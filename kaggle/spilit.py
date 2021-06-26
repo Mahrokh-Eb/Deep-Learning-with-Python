@@ -18,7 +18,7 @@ for filename, class_name in labels.values:
     src_path = train_dir + '/'+'cat.'+ str(filename) + '.jpg' #be carefull with the image name. check it in train folder
     dst_path = str(DR) + str(class_name) + '/' + str(filename) + str('.jpg')
     try:
-        shutil.copy(src_path, dst_path)
+        shutil.copy(src_path, dst_path) #we can either mmove or copy
         print("sucessful")
     except IOError as e:
         print('Unable to copy file {} to {}'
