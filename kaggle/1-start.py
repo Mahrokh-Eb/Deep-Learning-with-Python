@@ -1,6 +1,6 @@
 # start kaggle on google colab
 
-pip install kaggle
+!pip install kaggle
 
 import os
 os.environ['KAGGLE_CONFIG_DIR'] = "/content/drive/MyDrive/dogVsCat/drive"
@@ -10,7 +10,9 @@ os.environ['KAGGLE_CONFIG_DIR'] = "/content/drive/MyDrive/dogVsCat/drive"
 
 pwd
 
-#download dataset
+#download dataset 
+# put coorect API under data section in kaggle wesite
+!kaggle competitions download -c plant-seedlings-classification
 !kaggle competitions download -c dogs-vs-cats
 
 !ls
