@@ -1,4 +1,5 @@
 # start kaggle on google colab
+# download dataset from kaggle
 
 !pip install kaggle
 
