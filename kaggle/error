@@ -1,3 +1,4 @@
+# error while downloading dataset from kaggle
 # I'm trying to use Kaggle dataset for training the model in google colab. I'm getting an error '429 - Too Many Requests' on downloading large datasets. Any solutions?
 Thanks.
 
