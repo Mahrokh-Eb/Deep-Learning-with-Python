@@ -1,3 +1,6 @@
+# I hae 12 different classes (folder) in training data. it takes 2 of them in to valid folder. 
+# dataset name is "plant-seedlings-classification" in kaggle
+
 import os
 import random
 import shutil
@@ -9,3 +12,6 @@ no_of_files = len(files) // 5
 
 for file_name in random.sample(files, no_of_files):
     shutil.move(os.path.join(source, file_name), dest)
+    
+    
+    
