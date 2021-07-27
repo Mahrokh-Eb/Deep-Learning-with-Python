@@ -1,0 +1,11 @@
+import os
+import random
+import shutil
+
+source = 'folder_path_1'
+dest = 'dest_folder_path'
+files = os.listdir(source)
+no_of_files = len(files) // 5
+
+for file_name in random.sample(files, no_of_files):
+    shutil.move(os.path.join(source, file_name), dest)
