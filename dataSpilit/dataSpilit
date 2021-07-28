@@ -14,9 +14,28 @@ for file_name in random.sample(files, no_of_files):
     shutil.move(os.path.join(source, file_name), dest)
     
     
+ ############################################## the code above has been changed like below, 
+ # all folders is copied in val directory, however they are empty. we could also make those folders by mkdir in "val" folder
+ 
+ className = ['Black-grass', 'Charlock', 'Cleavers', 'Common Chickweed', 'Common wheat', 'Fat Hen'
+                 , 'Loose Silky-bent', 'Maize', 'Scentless Mayweed','Shepherds Purse', 'Small-flowered Cranesbill', 'Sugar beet']
+
+train_dirr = '/Users/mahrokh/Desktop/plant-seedlings-classification/train/'  
+val_dirr = '/Users/mahrokh/Desktop/plant-seedlings-classification/val/'
+
+
+for i in range(len(className)):
+    source = f'{train_dirr}{className[i]}'
+    dest = f'{val_dirr}{className[i]}'
+    
+    files = os.listdir(source)
+    no_of_files = len(files) // 5
+    
+    for file_name in random.sample(files, no_of_files):
+        shutil.move(os.path.join(source, file_name), dest)
     
     
- ############################################## another way
+ ############################################## another way, i didn't try it
  
 # import shutil module
 import shutil
