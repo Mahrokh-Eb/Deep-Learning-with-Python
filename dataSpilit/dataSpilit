@@ -40,6 +40,8 @@ for i in range(len(className)):
  # it makes "valid folder", then it create [s1,....s40] in valid fldder. 
  # the valid sub-folders are empty yet. 
  
+ import shutil, sys    
+ 
  # list of the name of subfolders in train
  className = ['s34','s33','s5','s2','s32','s35','s3','s4','s26','s19','s21','s17','s28',
              's10','s11','s16','s29','s20','s27','s18','s8','s1','s6','s39','s30','s37',
@@ -47,8 +49,8 @@ for i in range(len(className)):
              's23']
 
 DATA_DIR = '/Users/mahrokh/Desktop/faceAT'
-train_dir = f'{DATA_DIR}/train'
-valid_dir = f'{DATA_DIR}/valid'
+train_dir = f'{DATA_DIR}/train/'
+valid_dir = f'{DATA_DIR}/valid/'
 
 # creat valid folder next to train folder
 os.mkdir(valid_dir)
