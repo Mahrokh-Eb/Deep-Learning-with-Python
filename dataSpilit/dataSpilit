@@ -38,9 +38,7 @@ for i in range(len(className)):
     
  #################################################### a way to create exate same subfolders that are in train in valid folder
  # it makes "valid folder", then it create [s1,....s40] in valid fldder. 
- # the valid sub-folders are empty yet. 
- 
- import shutil, sys    
+ # the valid sub-folders are empty yet.   
  
  # list of the name of subfolders in train
  className = ['s34','s33','s5','s2','s32','s35','s3','s4','s26','s19','s21','s17','s28',
@@ -58,4 +56,31 @@ os.mkdir(valid_dir)
 # create exact subfolders in valid folder
 for i in range(len(className)):
     os.mkdir(f'{DATA_DIR}/valid/{className[i]}')
+    
+    
+############################################# completed, it makes valid folder, sub-folders in valid (classes), move from train to val sub-folders
+
+import shutil, sys    
+className = ['s34','s33','s5','s2','s32','s35','s3','s4','s26','s19','s21','s17','s28',
+             's10','s11','s16','s29','s20','s27','s18','s8','s1','s6','s39','s30','s37',
+             's7','s9','s36','s31','s38','s22','s25','s13','s14','s40','s15','s12','s24',
+             's23']
+
+DATA_DIR = '/Users/mahrokh/Desktop/faceAT'
+train_dir = f'{DATA_DIR}/train/'
+valid_dir = f'{DATA_DIR}/valid/'
+
+#os.mkdir(valid_dir)
+for i in range(len(className)):
+    os.mkdir(f'{DATA_DIR}/valid/{className[i]}')
+    
+for i in range(len(className)):
+    source = f'{train_dir}{className[i]}'
+    dest = f'{valid_dir}{className[i]}'
+    
+    files = os.listdir(source)
+    no_of_files = len(files) // 5
+    
+    for file_name in random.sample(files, no_of_files):
+        shutil.move(os.path.join(source, file_name), dest)
     
